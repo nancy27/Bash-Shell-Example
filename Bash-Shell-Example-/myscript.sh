@@ -73,6 +73,37 @@ NAME="Nancy"
 # ;;
 # esac
 
+select opt in Addition Substraction Division Quit
+do
+ case $opt in 
+ Addition)
+   read -p "Enter A " a 
+   read -p "Enter  B " b 
+   echo "Addition of two no : $(($a+$b)) "
+   ;;
+ Substraction)
+   read -p "Enter A " a 
+   read -p "Enter  B " b 
+   echo "Addition of two no : $((a-b)) "
+   ;;
+ Division)
+   read -p "Enter A " a 
+   read -p "Enter  B " b 
+   echo "Addition of two no : $((a/b)) "
+   ;;
+  Quit)
+  echo "Thank You!"
+  exit 0
+  ;;
+  *)
+  echo "Invalid"
+  ;;
+  esac    
+done
+  
+    
+
+
 # #Simple For Loop
 # NAMES="Alice John Buck Sharon"
 # for NAME in $NAMES
@@ -124,9 +155,28 @@ function greet(){
  echo "Hello World " >> "hello/world.txt"
  echo "Created hello/world.txt"
 
+#seq will produce sequence of numbers
+#seq start end 
+#seq start step end 
 for i in $(seq 10)
 do 
   echo " value is $i"
   done
+#brace is another way will produce sequence of numbers
+#echo {start end} 
+#echo  {start end step}  
+echo {1..10..2} 
 #arithmetic operations (())
   echo $((3+5))
+
+
+  #How to get command line arguments if its not given then it will not execute
+  
+cmd_line_args=$#
+if[$cmd_line_args -eq 2]
+then
+  x=$1
+  y=$2
+  result=$(($x +$y))
+  echo " The result is : ${result}" 
+fi
