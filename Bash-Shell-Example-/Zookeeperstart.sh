@@ -5,10 +5,19 @@ cd /Users/nancy/Projects/Zookeeper/cp-all-in-one/cp-all-in-one
 echo " --------------------------------KAFKA-----------------------------------------"
 echo "Bring Zookeeper UP :"
 echo " -------------------------------------------------------------------------------"
-docker_response=$(docker-compose up -d)
-echo "docker responsee : ${docker_response}"
+docker-compose up -d
 touch "docker.txt"
 docker-compose ps > "docker.txt"
+echo "HI"
+result=$(cat docker.txt | awk '{print $3}'| grep "Up" |wc -l)
+#UP_count=$(echo "${result}")
+if [ ${result} == 8 ]
+then 
+  echo "Docker Status is Up "
+else
+  exit 0  
+fi
+
 cd /Users/nancy/Projects/Zookeeper/kafka_2.12-2.5.0
 
 # function topicCreation(){
