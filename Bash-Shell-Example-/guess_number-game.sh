@@ -17,7 +17,7 @@ then
 
  if [ $Guess_Number -ge $Number ]
  then
-    echo "Your guess is Greater than the number $Number"
+    echo "Your guess is Greater than the number "
 else
    echo "your Guess is Lesser than the number "
  fi
