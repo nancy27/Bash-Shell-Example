@@ -1,0 +1,2 @@
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                  PORTS               NAMES
+71e6b191dea7        postgres:latest     "docker-entrypoint.s…"   1 second ago        Up Less than a second   5432/tcp            postgresqldb
