@@ -1,2 +1,2 @@
 # Bash-Shell-Example
-Scripting Example
+Basic Zookeeper starting script Example
